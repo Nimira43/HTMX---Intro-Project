@@ -7,14 +7,25 @@
 </head>
 <body>
     <div
-        hx-get="https://html-mock.fly.dev/tag/paragraph"
+        hx-get="/content"
         hx-target="#result"
+        hx-trigger="every 2s" 
     >
         Working and Online
     </div>
-    <div id="result"></div>
     
+    <!-- 
+        Notes:
 
+        hx-trigger="every 2s" - This sends client-sided requests every 2 seconds. Kind of like a Ping request
+
+
+
+
+     -->
+    
+    
+    <div id="result"></div>
     <script src="https://unpkg.com/htmx.org@1.9.12" integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>HTMX Introduction Project</title>      
+    <title>HTMX Intro Project</title>      
 </head>
 <body>
-    
+    <div
+        hx-get="https://html-mock.fly.dev/tag/paragraph"
+        hx-target="#result"
+    >
+        Working and Online
+    </div>
     <div id="result"></div>
     
 

@@ -1,0 +1,25 @@
+Demo 1 - Button Links
+
+<button
+    hx-get="https://html-mock.fly.dev/gist/5962aa323f41d88bcdff041fee0304e3#file-hello-htmx-html"
+    hx-target="#result"
+    >Submit</button>
+<button 
+    hx-get='https://html-mock.fly.dev/tag/table?class=table%20table-bordered'
+    > Get </button>
+<button 
+    hx-get='https://html-mock.fly.dev/gist/c9fd72b8f8a265d8bfcdb4338ffc76fa'
+    > Get Gist </button>
+
+Demo 2 - Using POST and PUT
+
+<form hx-post="https://html-mock.fly.dev/tag/paragraph" hx-target="#result">
+    <label for="name">Enter Name</label>
+    <input type="text" id="name">
+    <input type="submit" value="Submit">
+</form>
+<form hx-put="https://html-mock.fly.dev/tag/paragraph" hx-target="#result2">
+    <label for="email">Enter Email</label>
+    <input type="email" id="email">
+    <input type="submit" value="Submit">
+</form>

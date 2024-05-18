@@ -23,3 +23,23 @@ Demo 2 - Using POST and PUT
     <input type="email" id="email">
     <input type="submit" value="Submit">
 </form>
+
+Demo 3 - Trigger Events
+
+<div style="height: 1550px"></div>
+<div 
+    hx-get="https://html-mock.fly.dev/tag/paragraph" hx-target="#result"
+    hx-trigger="revealed"
+>
+    Get Info
+
+    <!-- Use cases for hx-trigger -->
+
+    <!-- hx-trigger="intersect" -->
+    <!-- hx-trigger="load" -->
+    <!-- hx-trigger="click[ctrlKey]" -->
+    <!-- hx-trigger="mouseenter once" -->
+    <!-- hx-trigger="mouseenter delay:5s" -->
+    <!-- hx-trigger="mouseenter throttle:5s" -->
+
+</div>

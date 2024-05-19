@@ -73,3 +73,74 @@ htmx
 ------------------------------------------------------------------
 Demo 5 - Long Polling
 
+app.get('/content', (req, res) => {
+    count++
+    if (count > 5) {
+        count = 0
+        return res.status(286)
+    }
+    // If statement will stop request from client 
+
+    res.send('<h2>Content from /content</h2>')
+})
+
+htmx
+
+<div
+        hx-get="/content"
+        hx-target="#result"
+        hx-trigger="every 2s" 
+    >
+        Working and Online
+    </div>
+    
+    <!-- 
+        Notes:
+
+        hx-trigger="every 2s" - This sends client-sided requests every 2 seconds. Kind of like a Ping request
+     -->
+</div>
+------------------------------------------------------------------
+Demo 6 - Request Indicators
+
+import express from 'express'
+import { dirname } from 'path'   
+import { fileURLToPath } from 'url'
+
+const app = express()
+const PORT = 3000 
+
+app.use(express.static(`${dirname(fileURLToPath(import.meta.url))}/public`))
+
+app.get('/', (req, res) => {
+    res.sendFile(`${dirname(fileURLToPath(import.meta.url))}/index.html`)
+})
+
+app.get('/indicator', (req, res) => {
+    setTimeout(() => {
+        res.send('<h2>Request Indicator</h2>')
+    }, 3000)
+})
+
+app.listen(PORT, () => {
+    console.log(`Server is listening on ${PORT}`)
+})
+
+htmx
+
+<button 
+    hx-get="/indicator"
+    hx-target="#result"
+    hx-indicator="#indicator"
+    hx-disabled-elt="this"
+>
+    Request Indicator
+</button>
+
+<div 
+    id="indicator"
+    class="htmx-indicator"
+    style="background-color: red;"
+>
+    <img src="assets/icon.ico">
+</div>    

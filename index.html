@@ -6,25 +6,32 @@
     <title>HTMX Intro Project</title>      
 </head>
 <body>
-    <div
-        hx-get="/content"
+    <!-- <div
+        hx-get="/polling"
         hx-target="#result"
         hx-trigger="every 2s" 
     >
         Working and Online
-    </div>
-    
-    <!-- 
-        Notes:
+    </div> -->
 
-        hx-trigger="every 2s" - This sends client-sided requests every 2 seconds. Kind of like a Ping request
+    <button 
+        hx-get="/indicator"
+        hx-target="#result"
+        hx-indicator="#indicator"
+        hx-disabled-elt="this"
+    >
+        Request Indicator
+    </button>
 
-
-
-
-     -->
-    
-    
+    <div 
+        id="indicator"
+        class="htmx-indicator"
+        style="background-color: red;"
+    >
+        <img src="assets/icon.ico">
+    </div>    
+        
+          
     <div id="result"></div>
     <script src="https://unpkg.com/htmx.org@1.9.12" integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2" crossorigin="anonymous"></script>
 </body>
